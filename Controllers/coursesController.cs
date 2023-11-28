@@ -10,12 +10,14 @@ namespace DotNet1.Controllers
     {
         public IActionResult Index()
     {
-        // return View();
-        return Content("Sono Index");
+        return View();
+        // return Content("Sono Index");
     }
     public IActionResult Detail(string id)
     {
-        return Content($"Sono detail, ho ricevuto l'id {id}");
+        // return Content($"Sono detail, ho ricevuto l'id {id}");
+        return View();
+
     }
     }
 }
