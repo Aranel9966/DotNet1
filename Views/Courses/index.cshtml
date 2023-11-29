@@ -3,9 +3,7 @@
 @model List<CourseViewModel> 
 <h1>Catalogo corsi</h1>
 @foreach(CourseViewModel course in Model){
-
-
-
+    
 <div class="row course m-3">
     <div class="col-md-2 m-auto">
         <img src="~/logo.png" alt="" width="50px">
@@ -13,18 +11,23 @@
     <div class="col-md-4">
         <h2>@course.Title @course.Id</h2>
     </div>
-    <div class="col-md-2 rating">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
+    <div class="col-md-2 rating" title="@course.Rating">
+        @for(int i=1; i<=5; i++)
+        {
+            if(course.Rating>=i){
+                <i class="fa-solid fa-star"></i>           
+            }else if(course.Rating >i-1){
+                <i class="fa-solid fa-star-half-alt"></i>           
+            }else{
+                <i class="fa-regular fa-star"></i>        
+            }
+        }
     </div>
     <div class="col-md-2">
         <strong>@course.Price €</strong>
     </div>
     <div class="col-md-2">
-        <a class="btn btn-primary" asp-controller="Courses" asp-action="detail">Dettaglio</a>
+        <a class="btn btn-primary" asp-controller="Courses" asp-action="detail" asp-route-itemid=" @course.Id">Dettaglio</a>
     </div>
 </div>
 }

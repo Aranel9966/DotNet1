@@ -16,6 +16,7 @@ namespace DotNet1.Models.Services.Application
             var course =new CourseViewModel
             {
                 Id = i,
+                Rating= 3.5,
                 Title="corso",
                 Price= 12.11 ,
             };
