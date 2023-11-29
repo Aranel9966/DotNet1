@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotNet1.Models.Services.Application;
+using DotNet1.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNet1.Controllers
@@ -11,7 +13,7 @@ namespace DotNet1.Controllers
     public IActionResult Index()
     {
         var courseService = new CourseService();
-        List<CourseViewModel> courses = courseService.GetServices();
+        List<CourseViewModel> courses = courseService.GetCourses();
         return View(courses);
         // return Content("Sono Index");
     }
@@ -23,14 +25,5 @@ namespace DotNet1.Controllers
     }
     }
 
-    internal class CourseViewModel
-    {
-    }
 
-    internal class CourseService
-    {
-        public CourseService()
-        {
-        }
-    }
 }
