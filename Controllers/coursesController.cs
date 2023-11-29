@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DotNet1.Controllers
 {
-    public class Courses : Controller
+    public class CoursesController : Controller
     {
-        public IActionResult Index()
+    public IActionResult Index()
     {
-        return View();
+        var courseService = new CourseService();
+        List<CourseViewModel> courses = courseService.GetServices();
+        return View(courses);
         // return Content("Sono Index");
     }
     public IActionResult Detail(string id)
@@ -19,5 +21,16 @@ namespace DotNet1.Controllers
         return View();
 
     }
+    }
+
+    internal class CourseViewModel
+    {
+    }
+
+    internal class CourseService
+    {
+        public CourseService()
+        {
+        }
     }
 }

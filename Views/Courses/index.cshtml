@@ -1,12 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>courses</title>
-</head>
-<body>
-    <h1>index courses </h1>
-    
-</body>
-</html>
+<h1>Catalogo corsi</h1>
+
+<div class="row course m-3">
+    <div class="col-md-2 m-auto">
+        <img src="~/logo.png" alt="" width="50px">
+    </div>
+    <div class="col-md-4">
+        <h2>titolo corso</h2>
+    </div>
+    <div class="col-md-2 rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+    </div>
+    <div class="col-md-2">
+        <strong>12,99</strong>
+    </div>
+    <div class="col-md-2">
+        <a class="btn btn-primary" asp-controller="Courses" asp-action="detail">Dettaglio</a>
+    </div>
+</div>
