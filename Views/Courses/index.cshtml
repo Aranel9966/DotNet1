@@ -1,11 +1,17 @@
+
+@using DotNet1.Models.ViewModels;
+@model List<CourseViewModel> 
 <h1>Catalogo corsi</h1>
+@foreach(CourseViewModel course in Model){
+
+
 
 <div class="row course m-3">
     <div class="col-md-2 m-auto">
         <img src="~/logo.png" alt="" width="50px">
     </div>
     <div class="col-md-4">
-        <h2>titolo corso</h2>
+        <h2>@course.Title @course.Id</h2>
     </div>
     <div class="col-md-2 rating">
         <i class="fa-solid fa-star"></i>
@@ -15,9 +21,10 @@
         <i class="fa-solid fa-star"></i>
     </div>
     <div class="col-md-2">
-        <strong>12,99</strong>
+        <strong>@course.Price €</strong>
     </div>
     <div class="col-md-2">
         <a class="btn btn-primary" asp-controller="Courses" asp-action="detail">Dettaglio</a>
     </div>
 </div>
+}

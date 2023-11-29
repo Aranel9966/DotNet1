@@ -8,9 +8,24 @@ namespace DotNet1.Models.Services.Application
 {
     public class CourseService
     {
-        internal List<CourseViewModel> GetCourses()
+        public List<CourseViewModel> GetCourses()
         {
-            throw new NotImplementedException();
+            var courseList= new List<CourseViewModel>();
+            for(int i = 1; i<=10;i++){
+
+            var course =new CourseViewModel
+            {
+                Id = i,
+                Title="corso",
+                Price= 12.11 ,
+            };
+            courseList.Add(course);
+            }
+            
+            return courseList;
+          
         }
     }
 }
+
+
