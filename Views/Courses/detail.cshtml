@@ -1,1 +1,87 @@
+@model CourseDetailViewModel
+
     <h1>Details</h1>
+    <section class="course-info">
+        <div class="row">
+            <div class="col-md-9">
+                <h1> provaaa @Model.Title</h1>
+            </div>
+            <div class="col-md-3 d-flex">
+                <a href=""></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatum esse suscipit minus dolor eius rerum earum, quod, sapiente molestias voluptates quis expedita asperiores, soluta deleniti vitae ipsum reiciendis et?</p>
+            </div>
+            <div class="col-md-3">
+                <aside>
+                    <author>di Nome autore</author>
+                        <div class="col-md-2 rating" title="@Model.Rating">
+                        @for(int i=1; i<=5; i++)
+                        {
+                            if(Model.Rating>=i){
+                                <i class="fa-solid fa-star"></i>           
+                            }else if(Model.Rating >i-1){
+                                <i class="fa-solid fa-star-half-alt"></i>           
+                            }else{
+                                <i class="fa-regular fa-star"></i>        
+                            }
+                        }
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+@* sezione lezioni  *@
+    <section class="course-lessons">
+        <h2>Lezioni</h2>
+        
+        <div class="row">
+            <div class="col-md-3 d-flex align-items-end">
+                <ul>
+
+                @foreach(var lesson in Model.Lessons){
+                    <li>
+                        <a href="#">@lesson.Title </a>
+                        <span class="col-md-3"> @lesson.Duration</span>
+                    </li>
+                        
+                
+                }
+                </ul>
+            </div>
+            <div class="col-md-9 d-flex ">
+                <i></i>
+            </div>
+        </div>
+         <hr>
+
+          <div class="row course-duration">
+		@* <div class="col-md-9 d-flex align-items-center">
+            Totale
+        </div>
+        <div class="col-md-3 d-flex align-items-center justify-content-end">
+            <i class="far fa-clock"></i><time>@Model.TotalCourseDuration.ToString("h'h 'm'm 's's'")</time>
+        </div> *@
+    </div>
+</section>
+
+<div class="modal fade" id="voteModal" tabindex="-1" aria-labelledby="voteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="voteModalLabel">Il tuo voto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <iframe width="100%" height="100" frameBorder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </section>

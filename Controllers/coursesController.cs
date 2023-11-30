@@ -17,11 +17,11 @@ namespace DotNet1.Controllers
         return View(courses);
         // return Content("Sono Index");
     }
-    public IActionResult Detail(string id)
+    public IActionResult Detail(int id)
     {
-        // return Content($"Sono detail, ho ricevuto l'id {id}");
-        return View();
-
+        var courseService = new CourseService();
+        CourseDetailViewModel viewModel = courseService.GetCourses(id);
+        return View(viewModel);
     }
     }
 
