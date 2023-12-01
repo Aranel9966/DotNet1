@@ -6,7 +6,7 @@ using DotNet1.Models.ViewModels;
 
 namespace DotNet1.Models.Services.Application
 {
-    public class CourseService
+    public class CourseService : ICourseService
     {
         public List<CourseViewModel> GetCourses()
         {
@@ -49,6 +49,16 @@ namespace DotNet1.Models.Services.Application
             
             return course;
           
+        }
+
+        CourseDetailViewModel ICourseService.GetCourse(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<CourseService> ICourseService.GetCourses()
+        {
+            throw new NotImplementedException();
         }
     }
 }
