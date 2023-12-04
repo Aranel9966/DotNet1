@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DotNet1.Models.ViewModels;
-
+  
 namespace DotNet1.Models.Services.Application
 {
     public class CourseService : ICourseService
@@ -56,10 +56,10 @@ namespace DotNet1.Models.Services.Application
             throw new NotImplementedException();
         }
 
-        List<CourseService> ICourseService.GetCourses()
-        {
-            throw new NotImplementedException();
-        }
+        // List<CourseService> ICourseService.GetCourses()
+        // {
+        //     throw new NotImplementedException();
+        // }
     }
 }
 
