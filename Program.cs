@@ -1,11 +1,13 @@
 using DotNet1.Models.Services.Application;
+using DotNet1.Models.Services.infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<ICourseService, CourseService>();
+builder.Services.AddTransient<ICourseService, AdoNetCourseService>();
+builder.Services.AddTransient<IDatabaseAccessor, SqLiteDatabaseAccessor>();
 
 var app = builder.Build();
 
