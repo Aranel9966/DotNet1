@@ -10,9 +10,9 @@ namespace DotNet1.Models.Services.Application
     {
         public List<CourseViewModel> GetCourses()
         {
-            var rand = new Random();
 
             var courseList= new List<CourseViewModel>();
+            var rand = new Random();
             for(int i = 1; i<=10;i++){
                 var course =new CourseViewModel
                     {
@@ -56,10 +56,10 @@ namespace DotNet1.Models.Services.Application
             throw new NotImplementedException();
         }
 
-        List<CourseService> ICourseService.GetCourses()
-        {
-            throw new NotImplementedException();
-        }
+        // List<CourseService> ICourseService.GetCourses()
+        // {
+        //     throw new NotImplementedException();
+        // }
     }
 }
 

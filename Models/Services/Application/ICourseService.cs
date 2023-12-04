@@ -8,7 +8,8 @@ namespace DotNet1.Models.Services.Application
 {
     public interface ICourseService
     {
-        List<CourseService> GetCourses();
+        List<CourseViewModel> GetCourses();
         CourseDetailViewModel GetCourse(int id);
+    
     }
 }

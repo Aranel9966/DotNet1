@@ -10,9 +10,9 @@ namespace DotNet1.Controllers
 {
     public class CoursesController : Controller
     {
-        private readonly CourseService courseService;
+        private readonly ICourseService courseService;
 
-        public CoursesController(CourseService courseService)
+        public CoursesController(ICourseService courseService)
         {
             this.courseService = courseService;
         }
@@ -26,7 +26,7 @@ namespace DotNet1.Controllers
     public IActionResult Detail(int id)
     {
         // var courseService = new CourseService();
-        CourseDetailViewModel viewModel = courseService.GetCourses(id);
+        CourseDetailViewModel viewModel = courseService.GetCourse(id);
         ViewData["Title"]= viewModel.Title;
         return View(viewModel);
     }

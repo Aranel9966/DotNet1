@@ -21,7 +21,7 @@ namespace DotNet1.Models.Services.Application
             throw new NotImplementedException();
         }
 
-        public List<CourseService> GetCourses()
+        public List<CourseViewModel> GetCourses()
         {
             string query = "SELECT *FROM Courses";
             DataSet dataSet = db.Query(query);
